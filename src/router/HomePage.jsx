@@ -5,7 +5,7 @@ import HomeProces from '../components/HomeProces'
 import Hustler from '../components/Hustler'
 import Studies from '../components/Studies'
 import HelpAndJoin from '../components/HelpAndJoin'
-import Footer from '../components/Footer/Footer'
+import Footer from '../components/footer/Footer'
 
 // Lazy Load HomeSlider and Globe
 const HomeSlider = lazy(() => import('../components/HomeSlider'));
