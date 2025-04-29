@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 function HelpAndJoin() {
+
+    useEffect(()=> {
+        gsap.from(".help--box", {
+            scrollTrigger: {
+              trigger: ".help--box",
+              start: "top 80%",
+            },
+            opacity: 0,
+            y: 50,
+            duration: 0.5,
+            ease: "power2.out",
+          });
+    },[])
+
     return (
         <div className="bg-btnColor lg:py-24 py-16 bg-no-repeat bg-contain bg-center bg-fixed" style={{ backgroundImage: `url(${'https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757585/20250409_122315_efpvmc.avif'})` }}>
             <div className="max-w-[1500px] w-full px-6 lg:px-20 mx-auto">
-                <div className='flex flex-col items-center gap-6'>
+                <div className='flex flex-col items-center gap-6 help--box'>
                     <div className='w-fit mx-auto'>
                         <svg width="130" height="40" viewBox="0 0 130 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="44.7144" width="40" height="40" rx="20" fill="#F9F9FF" />

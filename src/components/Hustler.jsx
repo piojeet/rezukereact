@@ -1,11 +1,38 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 function Hustler() {
+
+    useEffect(()=> {
+        gsap.from(".hustler--box", {
+            scrollTrigger: {
+                trigger: ".hustler--box",
+                start: "top 80%",
+            },
+            opacity: 0,
+            y: 50,
+            duration: 0.5,
+            ease: "power2.out"
+        });
+        gsap.from(".hustler--box-img", {
+            scrollTrigger: {
+                trigger: ".hustler--box-img",
+                start: "top 80%",
+            },
+            opacity: 0,
+            x: 300,
+            duration: 1,
+            ease: "power2.out"
+        });
+    },[])
+
     return (
-        <div className='lg:py-24 py-16 bg-primeryColor relative'>
+        <div className='lg:py-24 py-16 bg-primeryColor relative overflow-hidden'>
             <div className='max-w-[1500px] w-full px-6 lg:px-20 mx-auto'>
-                <div className='lg:max-w-[60ch] w-full relative z-20 text-center lg:text-start'>
+                <div className='lg:max-w-[60ch] w-full relative z-20 text-center lg:text-start hustler--box'>
                     <h2 className='lg:text-5xl text-3xl font-bold text-darkTextColor font-satoshi !leading-[1.2]'>Been called good communicator, hustler, sometimes genius.</h2>
                     <div className='flex flex-col gap-6 mt-10 w-fit mx-auto lg:mx-0'>
                         <div className='flex items-center gap-4'>
@@ -43,7 +70,7 @@ function Hustler() {
                 </div>
             </div>
 
-            <div className='absolute bottom-0 right-0 h-full hidden lg:block'>
+            <div className='absolute bottom-0 right-0 h-full hidden lg:block hustler--box-img'>
                 <img src={'https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757585/m0whxCj8GP9pbS23yaa6jp5WTdE_cfcoas.avif'} alt={'img'} className='block h-full' />
             </div>
         </div>

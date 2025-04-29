@@ -3,7 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import Icon from '../assets/images/Deliveroo.svg';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 const slides = [
   {
@@ -50,11 +54,26 @@ function HomeSlider() {
     };
   }, []);
 
+
+  useEffect(()=> {
+    gsap.from(".slider--heading", {
+      scrollTrigger: {
+          trigger: ".slider--heading",
+          start: "top 80%",
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.5,
+      delay: 0.2,
+      ease: "power2.out"
+  });
+  },[])
+
   return (
     <div className='lg:py-24 py-16 bg-btnColor'>
       <div className='max-w-[1500px] w-full px-6 lg:px-20 mx-auto'>
         <div className='lg:flex items-center justify-between'>
-          <h2 className='lg:text-5xl text-3xl font-black text-primeryColor font-satoshi text-center !leading-[1.2]'>Don’t just take my word for it</h2>
+          <h2 className='lg:text-5xl text-3xl font-black text-primeryColor font-satoshi text-center !leading-[1.2] slider--heading'>Don’t just take my word for it</h2>
 
           <div className="lg:flex gap-4 mt-4 hidden">
             <button className="swiper-btn-prev w-[64px] h-[64px] bg-primeryColor flex items-center justify-center rounded-full">

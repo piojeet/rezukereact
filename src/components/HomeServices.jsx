@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function HomeServices() {
     const servicescontent = [
@@ -10,18 +14,63 @@ function HomeServices() {
         { id: 5, title: 'Email Campaigns', disc: 'Donec ullamcorper nulla non metus auctor fringilla.', linktitle: 'Read more', link: '/', img: 'https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757586/google-circle_on1sgf.svg' }
     ];
 
+    useEffect(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.services-container',
+            start: "top 80%",
+            end: "bottom top",
+            markers: false,
+          }
+        });
+      
+        tl.fromTo(
+          ".box",
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 0.5, stagger: 0.3 }
+        );
+      
+        const boxes = document.querySelectorAll('.box');
+      
+        // Start from index 1 to skip the first box
+        boxes.forEach((box, index) => {
+          if (index === 0) return;
+      
+          box.addEventListener('mouseenter', () => {
+            gsap.to(box, { rotate: -2, duration: 0.3, ease: "power1.out" });
+          });
+      
+          box.addEventListener('mouseleave', () => {
+            gsap.to(box, { rotate: 0, duration: 0.3, ease: "power1.out" });
+          });
+        });
+      
+        return () => {
+          boxes.forEach((box, index) => {
+            if (index === 0) return;
+      
+            box.removeEventListener('mouseenter', () => {});
+            box.removeEventListener('mouseleave', () => {});
+          });
+        };
+      }, []);
+      
+
     return (
         <div className='bg-[#F9F9FF] lg:py-24 py-16'>
             <div className='max-w-[1500px] w-full px-6 lg:px-20 mx-auto'>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 gap-7'>
-                    <div>
+                <div className='services-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 gap-7'>
+                    <div className='box'>
                         <h2 className='lg:text-5xl text-3xl font-bold text-darkTextColor font-satoshi !leading-[1.2]'>Amazing services</h2>
                         <p className='font-normal font-satoshi text-xl text-darkTextColor mt-[16px] mb-[25px]'>My consulting services are designed to elevate your business. I provide tailored solutions to meet your unique needs.</p>
                         <NavLink to='/' className='font-satoshi font-medium py-[9px] px-[22px] rounded-md bg-btnColor text-primeryColor block w-fit text-center'>Let’s talk</NavLink>
                     </div>
 
                     {servicescontent.map(item => (
-                        <div key={item.id} className='md:p-[40px_52px_40px_40px] p-[30px_42px_30px_30px] bg-primeryColor rounded-ee-[100px] rounded-lg group hover:bg-btnColor transition-all duration-200 origin-bottom-left hover:-rotate-2'>
+                        <div 
+                            key={item.id} 
+                            className='box md:p-[40px_52px_40px_40px] p-[30px_42px_30px_30px] bg-primeryColor rounded-ee-[100px] rounded-lg group hover:bg-btnColor origin-bottom-left hover:-rotate-2'
+                        >
                             <div className='flex items-center gap-4 mb-[32px]'>
                                 <img src={item.img} alt={item.title} className='w-[43px] group-hover:invert transition-all duration-200' />
                                 <div className='md:text-[28px] text-[24px] font-satoshi font-bold text-darkTextColor transition-all duration-200 group-hover:text-primeryColor'>{item.title}</div>
