@@ -3,12 +3,13 @@ import Hero from '../components/Hero'
 
 // Lazy Load HomeSlider and Globe
 const HelpAndJoin = lazy(() => import('../components/HelpAndJoin'))
-const Studies = lazy(() => import('../components/Studies'))
+// const Studies = lazy(() => import('../components/Studies'))
 const Hustler = lazy(() => import('../components/Hustler'))
 const HomeProces = lazy(() => import('../components/HomeProces'))
-const HomeServices = lazy(() => import('../components/HomeServices'))
+const Struggle = lazy(() => import('../components/Struggle'))
 const HomeSlider = lazy(() => import('../components/HomeSlider'));
-const Globe = lazy(() => import('../components/Globe'));
+const FAQ = lazy(() => import('../components/FAQ'));
+const Partner = lazy(() => import('../components/Partner'));
 
 function HomePage() {
   return (
@@ -16,34 +17,37 @@ function HomePage() {
       <Hero />
 
       <Suspense fallback={<div></div>}>
-        <HomeServices />
+        <Struggle />
       </Suspense>
 
       <Suspense fallback={<div></div>}>
         <HomeProces />
       </Suspense>
 
+      <Suspense>
+        <Partner />
+      </Suspense>
 
       <Suspense fallback={<div></div>}>
         <HomeSlider />
       </Suspense>
 
       <Suspense fallback={<div></div>}>
-        <Globe />
+        <FAQ />
       </Suspense>
 
       <Suspense fallback={<div></div>}>
         <Hustler />
       </Suspense>
 
-      <Suspense fallback={<div></div>}>
+      {/* <Suspense fallback={<div></div>}>
         <Studies />
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback={<div></div>}>
-         <HelpAndJoin />
+        <HelpAndJoin />
       </Suspense>
-     
+
     </div>
   )
 }

@@ -5,15 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const clientLogos = [
-    "https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757587/Slack_n1k2go.svg",
-    "https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757587/Slack_n1k2go.svg",
-    "https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757587/Slack_n1k2go.svg",
-    "https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757587/Slack_n1k2go.svg",
-    "https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757587/Slack_n1k2go.svg"
-]
 function Hero() {
-    const sectionRef = useRef(null);
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -50,22 +42,6 @@ function Hero() {
         });
     }, []);
 
-    useEffect(() => {
-        const items = sectionRef.current.querySelectorAll(".client-animate");
-    
-        gsap.from(items, {
-          opacity: 0,
-          y: 30,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }, []);
 
     return (
         <div className='pb-[50px]'>
@@ -98,15 +74,6 @@ function Hero() {
                 <div className='absolute top-0 right-0 3xl:w-[20vw] lg:w-[35vw] w-[60vw] aspect-square origin-top-right' ref={boxRef} style={{ backgroundImage: `url('https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757586/Ellipse_hwro6l.svg')` }}>
                 </div>
 
-                <div className='flex items-center justify-between py-12 pb-4 flex-wrap gap-6' ref={sectionRef}>
-                    <div className='font-medium font-satoshi text-darkTextColor text-2xl client-animate'>Clients include:</div>
-
-                    <div className='flex items-center lg:gap-[3vw] flex-wrap gap-y-6 gap-x-6'>
-                        {clientLogos.map((src, i) => (
-                        <img src={src} key={i} className="client-animate" />
-                        ))}
-                    </div>
-                </div>
             </div>
         </div>
     )
