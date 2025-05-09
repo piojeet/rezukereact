@@ -70,7 +70,7 @@ function Hero() {
                         </p>
                     </div>
 
-                    <div className='max-w-[550px] w-[90%]'>
+                    <div className='sm:max-w-[550px] max-w-[330px] w-[90%]'>
                         <NavLink to='/'>
                             <img
                                 src='https://res.cloudinary.com/dwf7aydzq/image/upload/v1745761851/speaker_glkrvz.webp'
