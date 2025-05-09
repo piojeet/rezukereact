@@ -39,7 +39,7 @@ function Hero() {
     return (
         <div className='pb-[50px]'>
             <div className='max-w-[1500px] w-full px-6 lg:px-20 mx-auto relative'>
-                <div className='flex items-center justify-between lg:gap-6 gap-[7vw] py-10 relative z-30 flex-col-reverse lg:flex-row'>
+                <div className='flex items-center justify-between lg:gap-6 gap-[7vw] py-10 relative z-30 flex-col lg:flex-row'>
                     <div className='max-w-[620px] w-full' ref={containerRef}>
                         {/* <img
                             src='https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757586/Group_3_lew1tc.svg'
