@@ -85,7 +85,7 @@ function Hero() {
                     </div>
                 </div>
 
-                <div className='absolute top-0 right-0 3xl:w-[20vw] lg:w-[35vw] w-[60vw] aspect-square origin-top-right'>
+                <div className='absolute top-0 right-0 3xl:w-[20vw] lg:w-[35vw] w-[60vw] aspect-square origin-top-right md:block hidden'>
                     <div
                         className='absolute top-0 right-0 3xl:w-[20vw] lg:w-[35vw] w-[60vw] aspect-square origin-top-right'
                         ref={boxRef}
