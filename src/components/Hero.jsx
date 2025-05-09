@@ -76,7 +76,7 @@ function Hero() {
                                 src='https://res.cloudinary.com/dwf7aydzq/image/upload/v1745761851/speaker_glkrvz.webp'
                                 alt='img'
                                 className='w-full max-w-[550px] h-auto'
-                                loading='lazy'
+                                fetchPriority='high'
                             />
                         </NavLink>
                     </div>
