@@ -66,7 +66,7 @@ function Hero() {
                     </div>
                     <div className='max-w-[550px] w-[90%]'>
                         <NavLink to={'/'} >
-                            <img src={'https://res.cloudinary.com/dwf7aydzq/image/upload/v1745761851/speaker_glkrvz.webp'} alt={'img'} className='w-full max-w-[550px] h-auto' />
+                            <img src={'https://res.cloudinary.com/dwf7aydzq/image/upload/v1745761851/speaker_glkrvz.webp'} alt={'img'} className='w-full max-w-[550px] h-auto' fetchPriority='high' />
                         </NavLink>
                     </div>
                 </div>
