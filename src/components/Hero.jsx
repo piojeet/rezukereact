@@ -82,15 +82,19 @@ function Hero() {
                     </div>
                 </div>
 
-                <div
-                    className='absolute top-0 right-0 3xl:w-[20vw] lg:w-[35vw] w-[60vw] aspect-square origin-top-right'
-                    ref={boxRef}
-                    style={{
-                        backgroundImage: `url('https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757586/Ellipse_hwro6l.svg')`,
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                    }}
-                ></div>
+                <div className='absolute top-0 right-0 3xl:w-[20vw] lg:w-[35vw] w-[60vw] aspect-square origin-top-right'>
+                    <div
+                        className='absolute top-0 right-0 3xl:w-[20vw] lg:w-[35vw] w-[60vw] aspect-square origin-top-right'
+                        ref={boxRef}
+                        style={{
+                            backgroundImage: `url('https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757586/Ellipse_hwro6l.svg')`,
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                        }}
+                    >
+
+                    </div>
+                </div>
             </div>
         </div>
     );
