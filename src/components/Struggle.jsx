@@ -161,7 +161,7 @@ const Struggle = () => {
 
                 <div
                     ref={seminarHighlightRef}
-                    className='text-xl font-satoshi font-bold py-1.5 px-4 bg-[#f8f8ff] w-fit mx-auto mt-8'
+                    className='text-xl font-satoshi font-bold py-1.5 px-4 bg-[#f8f8ff] w-fit mx-auto mt-8 rounded-full'
                 >
                     <span className='text-btnColor'>Seminars win.</span> The real question is: <span className='text-btnColor'>How do you make them work?</span>
                 </div>

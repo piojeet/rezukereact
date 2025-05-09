@@ -41,16 +41,19 @@ function Hero() {
             <div className='max-w-[1500px] w-full px-6 lg:px-20 mx-auto relative'>
                 <div className='flex items-center justify-between lg:gap-6 gap-[7vw] py-10 relative z-30 flex-col-reverse lg:flex-row'>
                     <div className='max-w-[620px] w-full' ref={containerRef}>
-                        <img
+                        {/* <img
                             src='https://res.cloudinary.com/dwf7aydzq/image/upload/v1745757586/Group_3_lew1tc.svg'
                             alt='img'
                             className='block w-fit mx-auto lg:mx-0'
-                        />
-                        <h1 className='2xl:text-7xl lg:text-[40px] text-[32px] font-satoshi font-extrabold text-darkTextColor leading-tight my-4 text-center lg:text-left animate-item'>
-                            Boost your business through online <span className='text-btnColor'>marketing</span>
+                        /> */}
+                        <h1 className='2xl:text-7xl lg:text-[40px] text-[32px] font-satoshi font-extrabold text-darkTextColor leading-snug my-4 text-center lg:text-left animate-item'>
+                            Did Seminars  <span className='text-btnColor'>Fail
+                            You? </span>
+                            We Know
+                            Why. 
                         </h1>
-                        <p className='lg:text-2xl text-xl leading-[130%] font-medium font-satoshi text-darkTextColor text-center lg:text-left animate-item'>
-                            Hey there! I’m John Parker. Digital business consultant focussed on online marketing and advertising.
+                        <p className='lg:text-2xl text-xl leading-[130%] font-semibold font-satoshi text-darkTextColor text-center lg:text-left animate-item mt-6'>
+                            Book up to 10x more appointments. With guaranteed pre-screened, high-net-worth prospects.
                         </p>
                         <div className='mt-8 mb-4 animate-item'>
                             <NavLink

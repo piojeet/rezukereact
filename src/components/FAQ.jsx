@@ -10,11 +10,47 @@ const faqs = [
         answer: 'Seminars provide a personal touch, build trust, and engage directly with potential clients, making them more effective in certain niches.',
     },
     {
-        question: 'What is the best way to promote a seminar?',
+        question: 'Do you really guarantee quality?',
         answer: 'Using a mix of email marketing, social media, and local partnerships works best for seminar promotion.',
     },
     {
-        question: 'How do seminars convert better?',
+        question: 'What are the prices?',
+        answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
+    },
+    {
+        question: 'Why do you limit it to 2 or 3 advisors per area?',
+        answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
+    },
+    {
+        question: 'Can I customize the seminar content?',
+        answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
+    },
+    {
+        question: 'Do I need to speak or present at the seminar?',
+        answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
+    },
+    {
+        question: "What's included in a full campaign?",
+        answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
+    },
+    {
+        question: "Do I have to commit to multiple campaigns?",
+        answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
+    },
+    {
+        question: "How quickly can I get started?",
+        answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
+    },
+    {
+        question: "What if I've been burned by seminars before?",
+        answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
+    },
+    {
+        question: "How many appointments can I expect?",
+        answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
+    },
+    {
+        question: "Can you customize campaigns for my specitic needs?",
         answer: 'They allow real-time interaction, which builds credibility and helps close deals faster.',
     },
 ];
@@ -104,7 +140,7 @@ function FAQ() {
                                 onClick={() => toggleAccordion(index)}
                             >
                                 <div className='flex items-center gap-3'>
-                                    <span className='inline-flex w-[32px] h-[32px] bg-btnColor/20 rounded-full items-center justify-center text-btnColor'>
+                                    <span className='inline-flex w-[32px] h-[32px] bg-btnColor/20 rounded-full items-center justify-center text-btnColor flex-shrink-0'>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
